@@ -1,0 +1,50 @@
+search engine and rank 
+experiment results
+
+pagelist = ['http://www.diveintopython.net']
+
+experiment 1: 
+wordstosearch = 'python'
+
+select w0.urlid,w0.location from wordlocation w0 where w0.wordid=17
+2.664080	http://mail.python.org/mailman/listinfo
+2.302059	http://www.python.org/
+1.954539	http://www.diveintopython.net/toc/index.html
+1.915267	http://www.python.org/download/
+1.680419	http://www.activestate.com/ASPN/Python/Cookbook/
+1.234285	http://www.python.org/doc/Intros.html
+1.183635	http://www.diveintopython.net
+1.170176	http://www.diveintopython.net/appendix/history.html
+1.148202	http://es.diveintopython.net/
+1.086852	http://woodpecker.org.cn/diveintopython/
+(1, 201, 0.1)
+(1, 202, 0.1)
+(1, 203, 0.1)
+
+**********************************************************************
+experiment 2:
+wordstosearch = 'python programming'
+
+select w0.urlid,w0.location,w1.location from wordlocation w0,wordlocation w1 where w0.wordid=17 and w0.urlid = w1.urlid and w1.wordid=334
+2.702232	http://mail.python.org/mailman/listinfo
+2.373354	http://www.python.org/
+2.037690	http://www.diveintopython.net/toc/index.html
+1.979922	http://mail.python.org/mailman/listinfo/tutor
+1.254843	http://www.diveintopython.net/appendix/history.html
+1.123014	http://www.python.org/doc/Intros.html
+1.055294	http://www.ibiblio.org/catalog/items/show/3775
+0.941633	http://www.activestate.com/Products/Komodo/
+(1, 201, 1.581864)
+(1, 202, -0.66597)
+(1, 203, -0.327808)
+(2, 201, 0.513427)
+(2, 202, 1.384541)
+(2, 203, 0.933943)
+(3, 201, -0.466575)
+(3, 202, -0.639608)
+(3, 203, 1.170485)
+[Finished in 3.1s]
+
+
+
+
